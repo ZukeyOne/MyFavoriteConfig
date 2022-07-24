@@ -1,0 +1,39 @@
+set rtp+=~/Library/Python/3.8/lib/python/site-packages/powerline/bindings/vim
+
+" These lines setup the environment to show graphics and colors correctly.
+set nocompatible
+set t_Co=256
+ 
+ 
+if ! has('gui_running')
+   set ttimeoutlen=10
+   augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+   augroup END
+endif
+ 
+set laststatus=2 " Always display the statusline in all windows
+set guifont=Inconsolata\ for\ Powerline:h14
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set backspace=2
+
+
+syntax on
+set number
+set relativenumber
+set cursorline
+set wildmenu
+set hlsearch
+set incsearch
+
+noremap H 5h
+noremap L 5l
+noremap J 5j
+noremap K 5k
+
+
+map Q :q<CR>
+map S :w<CR>
+
